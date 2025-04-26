@@ -13,6 +13,7 @@ jobs:
       releases_created: ${{ steps.release-please.outputs.releases_created }}
       tag_name: ${{ steps.release-please.outputs.tag_name }}
     permissions:
+      issues: write
       contents: write
       pull-requests: write
     steps:
