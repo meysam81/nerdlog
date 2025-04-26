@@ -5,12 +5,6 @@ on:
     branches:
       - master
 
-permissions:
-  contents: read
-  id-token: write
-  packages: write
-  security-events: write
-
 jobs:
   release-please:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
@@ -34,7 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      packages: write
       issues: write
       pull-requests: write
       id-token: write
