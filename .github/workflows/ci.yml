@@ -1,12 +1,9 @@
 name: ci
 
 on:
-  pull_request:
-    branches:
-      - main
   push:
     branches:
-      - main
+      - master
 
 permissions:
   contents: read
@@ -16,7 +13,7 @@ permissions:
 
 jobs:
   release-please:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     outputs:
       releases_created: ${{ steps.release-please.outputs.releases_created }}
